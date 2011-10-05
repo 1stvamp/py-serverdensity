@@ -1,8 +1,9 @@
 ChangeLog for py-serverdensity
 ======================
 
-1.0.0 (unreleased)
+1.0.0 (05-10-2011)
 ------------------
 
  - Initial release
  - Basic streamlined OO wrapper for serverdensity.com API 1.3
+ - http://developer.serverdensity.com/docs/read/Home
