@@ -76,12 +76,18 @@ class SDApi(object):
         }
 
         if method in self._gets[self._name]:
-            r = requests.get(url, params=params, auth=(self._username,
+            request = requests.get(url, params=params, auth=(self._username,
                 self._password))
         elif method in self._posts[self._name]:
-            r = requests.post(url, params=params, auth=(self._username,
+            request = requests.post(url, params=params, auth=(self._username,
                 self._password))
-        return json.loads(r.content)
+
+        response = json.loads(r.content)
+        if response['status'] == 2:
+            raise SDServiceError(response['error']['message'],
+                                 response=response)
+        return response
+
 
     def __getattr__(self, attr_name):
         if self._name is None:
@@ -96,3 +102,14 @@ class SDApi(object):
             def wrapper(*args, **kwargs):
                 return self._request(attr_name, *args, **kwargs)
             return wrapper
+
+class SDServiceError(Exception):
+    """Container for API errors from serverdensity.com
+    """
+    def __init__(self, *args, **kwargs):
+        self.response = kwargs.get('response', {})
+
+        if 'response' in kwargs:
+            del kwargs['reponse']
+
+        super(SDServiceError, self).__init__(*args, **kwargs)
