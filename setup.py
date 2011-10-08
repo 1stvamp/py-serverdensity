@@ -14,6 +14,7 @@ except ImportError:
 setup(
     name='serverdensity',
     description='Python ServerDensity.com API wrapper',
+    long_description=open('README.rst').read(),
     version=__version__,
     author='Wes Mason',
     author_email='wes@boxedice.com',

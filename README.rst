@@ -1,4 +1,4 @@
-Readme for py-serverdensity 1.x
+py-serverdensity 1.x
 ===============================
 
 About py-serverdensity
