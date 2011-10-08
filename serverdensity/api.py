@@ -81,8 +81,10 @@ class SDApi(object):
         elif method in self._posts[self._name]:
             request = requests.post(url, params=params, auth=(self._username,
                 self._password))
+        else:
+            raise AttributeError(u'No method named %s' % (self._name,))
 
-        response = json.loads(r.content)
+        response = json.loads(request.content)
         if response['status'] == 2:
             raise SDServiceError(response['error']['message'],
                                  response=response)
@@ -110,6 +112,6 @@ class SDServiceError(Exception):
         self.response = kwargs.get('response', {})
 
         if 'response' in kwargs:
-            del kwargs['reponse']
+            del kwargs['response']
 
         super(SDServiceError, self).__init__(*args, **kwargs)
