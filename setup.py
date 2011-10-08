@@ -12,7 +12,7 @@ except ImportError:
         use_setuptools()
         from setuptools import setup, find_packages
 setup(
-    name='serverdensity',
+    name='py-serverdensity',
     description='Python ServerDensity.com API wrapper',
     long_description=open('README.rst').read(),
     version=__version__,
