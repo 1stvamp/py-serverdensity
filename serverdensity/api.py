@@ -13,7 +13,7 @@ GETS = {
     ),
     'devices': (
         'getByGroup', 'getByHostname', 'getById', 'getByIp', 'getByName',
-        'list', 'listGroups', 'rename',
+        'list', 'listGroups',
     ),
     'metrics': (
         'getLatest', 'getRange', 'list',
@@ -25,7 +25,7 @@ GETS = {
         'getByTime', 'getRange',
     ),
     'users': (
-        'getById', 'delete',
+        'getById',
     ),
 }
 
@@ -34,17 +34,17 @@ POSTS = {
         'pause', 'resume',
     ),
     'devices': (
-        'add', 'addGroup', 'delete',
+        'add', 'addGroup', 'delete', 'rename',
     ),
     'metrics': (
         'postback',
     ),
     'users': (
-        'add',
+        'add', 'delete',
     ),
 }
 
-API_VERSION = '1.3'
+API_VERSION = '1.4'
 BASE_URL = 'https://api.serverdensity.com/%(version)s/%(section)s/%(method)s'
 
 class SDApi(object):

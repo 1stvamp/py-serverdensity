@@ -1,6 +1,12 @@
 ChangeLog for py-serverdensity
 ======================
 
+1.0.1 (06-02-2012)
+------------------
+
+ - Bumped to version 1.4 of the API (http://developer.serverdensity.com/docs/read/Release_notes)
+ - Changed users/delete and devices/rename to POST methods
+
 1.0.0 (08-10-2011)
 ------------------
 
