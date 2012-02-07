@@ -25,7 +25,7 @@ GETS = {
         'getByTime', 'getRange',
     ),
     'users': (
-        'getById',
+        'getById', 'list',
     ),
 }
 
@@ -75,6 +75,9 @@ class SDApi(object):
             'method': method,
         }
 
+        if self._name not in self._gets and self._name not in self._posts:
+            raise AttributeError(u'No section named %s' % (self._name,))
+
         if method in self._gets[self._name]:
             request = requests.get(url, params=params, auth=(self._username,
                 self._password))
@@ -82,7 +85,7 @@ class SDApi(object):
             request = requests.post(url, params=params, auth=(self._username,
                 self._password))
         else:
-            raise AttributeError(u'No method named %s' % (self._name,))
+            raise AttributeError(u'No method named %s' % (method,))
 
         response = json.loads(request.content)
         if response['status'] == 2:
