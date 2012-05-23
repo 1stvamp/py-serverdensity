@@ -1,6 +1,11 @@
 ChangeLog for py-serverdensity
 ======================
 
+1.0.12 (23-05-2012)
+------------------
+
+ - Added POST data dict to request handler (thanks to https://github.com/xplosiv)
+
 1.0.1 (07-02-2012)
 ------------------
 
