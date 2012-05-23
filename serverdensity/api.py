@@ -63,7 +63,7 @@ class SDApi(object):
         self._base_url = base_url
         self._api_version = api_version
 
-    def _request(self, method, params={}):
+    def _request(self, method, data={}, params={}):
         if 'apiKey' not in params:
             params['apiKey'] = self._api_key
         if 'account' not in params:
@@ -82,7 +82,7 @@ class SDApi(object):
             request = requests.get(url, params=params, auth=(self._username,
                 self._password))
         elif method in self._posts[self._name]:
-            request = requests.post(url, params=params, auth=(self._username,
+            request = requests.post(url, data=data, params=params, auth=(self._username,
                 self._password))
         else:
             raise AttributeError(u'No method named %s' % (method,))
