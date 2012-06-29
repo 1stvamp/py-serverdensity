@@ -1,7 +1,12 @@
 ChangeLog for py-serverdensity
 ======================
 
-1.0.12 (23-05-2012)
+1.0.3 (23-05-2012)
+------------------
+
+ - Fix getHostname method to getHostName as per docs (http://developer.serverdensity.com/docs/read/Methods_Devices#getByHostName)
+
+1.0.2 (23-05-2012)
 ------------------
 
  - Added POST data dict to request handler (thanks to https://github.com/xplosiv)
