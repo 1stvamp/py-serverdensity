@@ -18,7 +18,7 @@ setup(
     version=__version__,
     author='Wes Mason',
     author_email='wes@boxedice.com',
-    url='https://github.com/1stvamp/py-serverdensity',
+    url='https://github.com/boxedice/py-serverdensity',
     packages=find_packages(exclude=['ez_setup']),
     install_requires=open('requirements.txt').readlines(),
     package_data={'serverdensity': ['version.txt']},
