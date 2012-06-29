@@ -12,7 +12,7 @@ GETS = {
         'list',
     ),
     'devices': (
-        'getByGroup', 'getByHostname', 'getById', 'getByIp', 'getByName',
+        'getByGroup', 'getByHostName', 'getById', 'getByIp', 'getByName',
         'list', 'listGroups',
     ),
     'metrics': (
