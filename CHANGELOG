@@ -1,7 +1,12 @@
 ChangeLog for py-serverdensity
 ======================
 
-1.0.3 (23-05-2012)
+1.0.4 (29-06-2012)
+------------------
+
+ - Transfered ownership to Boxed Ice Limited.
+
+1.0.3 (29-06-2012)
 ------------------
 
  - Fix getHostname method to getHostName as per docs (http://developer.serverdensity.com/docs/read/Methods_Devices#getByHostName)
