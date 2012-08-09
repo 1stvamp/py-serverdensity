@@ -79,6 +79,7 @@ class SDApi(object):
             raise AttributeError(u'No section named %s' % (self._name,))
 
         if method in self._gets[self._name]:
+            params.update(data)
             request = requests.get(url, params=params, auth=(self._username,
                 self._password))
         elif method in self._posts[self._name]:
